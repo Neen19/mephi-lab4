@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:16.2-bookworm
+    container_name: my_postgres_db
+    environment:
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
